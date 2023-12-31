@@ -10,7 +10,7 @@
             [hyperfiddle.history :as history]))
 
 (def tutorials
-  [["Electric" 
+  [["Electric"
     [`electric-tutorial.demo-two-clocks/TwoClocks
      `electric-tutorial.demo-toggle/Toggle
      `electric-tutorial.demo-system-properties/SystemProperties
@@ -27,7 +27,7 @@
      #_`electric-tutorial.demo-todomvc/TodoMVC
      #_`electric-tutorial.demo-todomvc-composed/TodoMVC-composed
      #_`electric-tutorial.demo-explorer/DirectoryExplorer
-     
+
      #_`electric-demo.demo-virtual-scroll/VirtualScroll ; virtual scroll Server-streamed virtual pagination over node_modules. Check the DOM!
      #_`electric-demo.wip.demo-stage-ui4/CrudForm
      #_`wip.demo-custom-types/CustomTypes ; Custom transit serializers example
@@ -108,6 +108,7 @@
 
 (e/defn Tutorial [& [?tutorial :as route]]
   (e/client
+    (js/console.log "> MJP - Tutorial")
     (if (nil? (seq route)) (binding [hf/pages tutorials2] (Index.))
         (do #_(dom/pre (dom/text (pr-str history/route)))
             #_ (e/client (dom/div #_(dom/props {:class ""}))) ; fix css grid next

@@ -38,10 +38,12 @@
    `electric-tutorial.tutorial-7guis-4-timer/Timer electric-tutorial.tutorial-7guis-4-timer/Timer
    `electric-tutorial.tutorial-7guis-5-crud/CRUD electric-tutorial.tutorial-7guis-5-crud/CRUD
    ;`electric-tutorial.demo-reagent-interop/ReagentInterop electric-tutorial.demo-reagent-interop/ReagentInterop
+   ;`wip.teeshirt-orders/Webview-HFQL wip.teeshirt-orders/Webview-HFQL ;HFQL hello world. HFQL is a data notation for CRUD apps.
    })
 
 (e/defn FiddleMain [ring-req]
   (e/client
     (binding [hf/pages fiddles]
+      (js/console.log "> MJP - FiddleMain fiddles" (keys fiddles))
       (e/server
         (electric-fiddle.main/Main. ring-req)))))
