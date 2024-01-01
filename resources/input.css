@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ************************** */
+
 /* TODO migrate to Tailwind */
 
 @import url('user/examples.css');
