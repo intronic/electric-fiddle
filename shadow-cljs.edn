@@ -1,5 +1,13 @@
 {:nrepl {:port 9001}
  :npm-deps {:install false}
+
+ ;; See: https://github.com/tonsky/DataScript#latest-version-
+ ;; possibly should be under:
+ ;;       :builds {:lib {:compiler-options
+ ;;   or, :release {:compiler-options
+ ;; - https://github.com/tonsky/datascript/issues/432
+ #_:compiler-options #_{:externs ["datascript/externs.js"]}
+
  :builds
  {:dev
   {:target :browser
@@ -12,7 +20,7 @@
    :build-hooks [(hyperfiddle.electric.shadow-cljs.hooks/reload-clj)
                  (shadow.cljs.build-report/hook {:output-to "target/build_report.html"})
                  #_(user/rcf-shadow-hook)]}
-  
+
   :prod
   {:target :browser
    :output-dir "resources/public/js"

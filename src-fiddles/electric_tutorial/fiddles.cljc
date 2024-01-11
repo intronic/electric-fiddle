@@ -44,6 +44,6 @@
 (e/defn FiddleMain [ring-req]
   (e/client
     (binding [hf/pages fiddles]
-      (js/console.log "> MJP - FiddleMain fiddles" (keys fiddles))
+      (js/console.log "> MJP - FiddleMain electric tut fiddles" (keys fiddles))
       (e/server
         (electric-fiddle.main/Main. ring-req)))))
