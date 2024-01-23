@@ -7,31 +7,30 @@
 ;; - Record workplace hazard Risk Assessments
 
 (def schema
-  (vec (concat
-         [{:db/ident ::id
-           :db/valueType :db.type/uuid
-           :db/cardinality :db.cardinality/one
-           :db/doc "Risk Id"}
+  [{:db/ident ::id
+    :db/valueType :db.type/uuid
+    :db/cardinality :db.cardinality/one
+    :db/doc "Risk Id"}
 
-          {:db/ident ::person
-           :db/valueType :db.type/ref
-           :db/cardinality :db.cardinality/one
-           :db/doc "Person identifying the risk"}
+   {:db/ident ::person
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one
+    :db/doc "Person identifying the risk"}
 
-          {:db/ident ::location
-           :db/valueType :db.type/string
-           :db/cardinality :db.cardinality/one
-           :db/doc "Location of the risk"}
+   {:db/ident ::location
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "Location of the risk"}
 
-          {:db/ident ::time
-           :db/valueType :db.type/ref
-           :db/cardinality :db.cardinality/one
-           :db/isComponent true
-           :db/doc "Time risk recorded"}
+   {:db/ident ::time
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one
+    :db/isComponent true
+    :db/doc "Time risk recorded"}
 
-          {:db/ident ::hazard
-           :db/valueType :db.type/ref
-           :db/cardinality :db.cardinality/many
-           :db/isComponent true
-           :db/doc "Hazard, risk and controls identified"}]
-         )))
+   {:db/ident ::hazard
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/many
+    :db/isComponent true
+    :db/doc "Hazard, risk and controls identified"}]
+  )

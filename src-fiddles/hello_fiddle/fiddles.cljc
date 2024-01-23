@@ -4,12 +4,9 @@
    [hyperfiddle.electric-dom2 :as dom]
    #_[insilico.griffin.app :as fe]
    [electric-tutorial.tutorial-7guis-5-crud :as tut-crud]
+   [hello-fiddle.hello :refer [Hello]]
    [hello-fiddle.crud :as crud]))
 
-(e/defn Hello []
-  (e/client
-    #_(fe/setup)
-    (dom/h1 (dom/text "Hello world"))))
 
 ;; Dev entrypoint
 ;; Entries will be listed on the dev index page (http://localhost:8080)
